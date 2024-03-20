@@ -1,0 +1,46 @@
+.screeningLoader {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 0;
+
+    .stageLoader {
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #eef4fd;
+        position: relative;
+        font-size: 20px;
+        color: var(--accent-color);
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 37px;
+            width: 37px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: conic-gradient(#2333E6, transparent);
+            z-index: -2;
+            animation: spin 1.5s linear infinite;
+            animation-direction: reverse;
+        }
+    }
+
+    .pendingStage {
+        border-radius: 50%;
+        background: #eef4fd;
+        position: relative;
+        transition: all 0.3s linear;
+    }
+
+    @keyframes spin {
+        from {transform: translate(-50%, -50%) rotate(0);}
+        to   {transform: translate(-50%, -50%) rotate(360deg);}
+    }
+}

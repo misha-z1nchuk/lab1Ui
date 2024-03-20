@@ -1,0 +1,79 @@
+.phoneInput {
+    width: 100%;
+
+    .countrySelector {
+        transition: all 0.3s;
+        height: 100%;
+        padding: 4px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-color: transparent;
+        background: #e9ebef;
+        border-right: none;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+
+        img {
+            width: 30px;
+            height: 30px;
+            clip-path: circle(11px at 15px 15px);
+        }
+
+        path {
+            fill: #9fa2b0 !important;
+        }
+    }
+
+    &.disabled {
+        .countrySelector {
+            background: #f5f5f5 !important;
+            border-color: transparent;
+        }
+    }
+
+    .react-international-phone-country-selector-dropdown__list-item {
+        border-radius: 10px;
+        padding: 4px 8px;
+    }
+
+    .ant-form-item-control-input-content {
+        display: flex;
+    }
+
+    input {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-left: none;
+    }
+
+    &:hover:not(.disabled) {
+        .countrySelector,
+        input {
+            border-color: var(--input-grey-color-border);
+        }
+    }
+
+    &.isFocused {
+        .countrySelector,
+        input {
+            border-color: var(--input-color-border);
+        }
+    }
+
+    &.ant-form-item-has-error {
+        .countrySelector {
+            border-color: #ff4d4f !important;
+        }
+
+        input {
+            box-shadow: none !important;
+        }
+    }
+
+    .react-international-phone-country-selector-button__dropdown-arrow {
+        display: none;
+    }
+}

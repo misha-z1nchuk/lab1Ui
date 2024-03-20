@@ -1,0 +1,5 @@
+var APP_CONFIG = {
+    apiUrl      : 'http://localhost/8080/v1',
+    apiPrefix   : 'api/v1/',
+    language    : 'EN'
+};

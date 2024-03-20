@@ -1,0 +1,77 @@
+.DateInput {
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+
+    .ant-picker {
+      border: 1px solid transparent;
+      width: 100%;
+      height: 40px;
+  
+      .ant-picker-clear {
+        right: 25px;
+      }
+
+      &.ant-picker-status-error {
+        border: 1px solid var(--error-color) !important;
+      }
+    }  
+  
+    &.error {
+      .ant-picker {
+        border: 1px solid var(--error-color) !important;
+      }
+  
+      .ant-picker-focused {
+        .anticon-calendar {
+          background-color: var(--error-color) !important;
+        }
+      }
+    }
+  
+    &:hover {
+      .ant-picker {
+        transition-duration: unset;
+        border-color: var(--input-grey-color-border);
+  
+        &.ant-picker-disabled {
+          border-color: transparent !important;
+  
+          .anticon-calendar {
+            background-color: transparent;
+          }
+    
+        }
+  
+        .anticon-calendar {
+          background-color: #e3e4ed;
+        }
+      }
+    }
+  
+    .ant-picker-focused {
+      box-shadow: none !important;
+      border: 1px solid var(--input-color-border) !important;
+  
+      .anticon-calendar {
+        background-color: var(--input-color-border) !important;
+        
+        svg, path {
+            fill: var(--white-color) !important;
+        }
+      }
+    }
+  
+    .error-message {
+      position: absolute;
+      left: 15px;
+      bottom: -16px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: var(--error-color);
+    }
+  }
+  

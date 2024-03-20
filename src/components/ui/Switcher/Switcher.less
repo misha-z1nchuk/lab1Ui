@@ -1,0 +1,56 @@
+.switcherWrapper {
+    display: inline-block;
+    padding: 3px;
+    background-color: #F3F4F7;
+    border-radius: 10px;
+    height: 40px;
+    position: relative;
+
+    .ant-radio-group {
+        height: 100%;
+    }
+
+    .ant-radio-button-wrapper {
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+        width: 84px;
+        background-color: transparent;
+        text-align: center;
+        box-shadow: none !important;
+        line-height: 34px;
+
+        &.ant-radio-button-wrapper-checked {
+            background-color: #2333e6;
+
+            &:hover:not(.ant-radio-button-wrapper-disabled) {
+                background-color: #3F4EFF;
+            }
+        }
+
+        &:hover {
+            color: #2333E6;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &.ant-radio-button-wrapper-disabled {
+            opacity: 0.6;
+            color: rgba(0, 0, 0, 0.85);
+
+            &.ant-radio-button-wrapper-checked {
+                color: #fff;
+            }
+        }
+    }
+    
+    .switcherLoader {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+}

@@ -1,0 +1,45 @@
+.ChatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 28px 13px 20px;
+  border-bottom: 1px solid #f7f8fa;
+
+  .title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9fa2b0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #53a272;
+      top: 0;
+      right: -8px;
+    }
+  }
+
+  .close-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background: #eff0f8;
+    }
+  }
+}

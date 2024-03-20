@@ -1,0 +1,92 @@
+.fileUpload {
+    padding-bottom: 2px;
+    
+    .ant-upload {
+        width: 100%;
+    }
+
+    .uploadField {
+        width: 100%;
+        border: 1px dashed var(--accent-color) !important;
+        font-size: 14px;
+        line-height: 24px;
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        height: 40px;
+
+        &:hover {
+            border-color: #3f4eff;
+            background-color: #f8f8f8;
+            color: #3f4eff;
+        }
+
+        svg {
+            margin: 0 10px;
+        }
+    }
+
+    .ant-upload-list {
+        display: none;
+    }
+
+    .ant-form-item-control-input {
+        height: 40px;
+    }
+
+    .uploadWrapper {
+        display: flex;
+        align-items: center;
+
+        .fileValue,
+        >span {
+            flex-grow: 1;
+        }
+
+        .controlButton {
+            width: 14px;
+            margin-left: 15px;
+        }
+        .delete {
+            cursor: pointer;
+    
+            svg, path {
+                fill: var(--accent-color);
+            }
+        }
+    }
+
+    .fileValue {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+        gap: 10px;
+
+        .name {
+            max-width: 60%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        .control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: flex-end;
+
+            .size {
+                color: var(--secondary-color);
+                white-space: nowrap;
+            }
+
+
+        }
+    }
+}

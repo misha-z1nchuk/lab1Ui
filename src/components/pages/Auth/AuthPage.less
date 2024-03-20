@@ -1,0 +1,63 @@
+.AuthPage .container {
+    max-width: 300px;
+    width: 100%;
+    z-index: 4;
+
+    .Login-text {
+        min-height: 50px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: var(--white-color);
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .Login-text-error {
+        color: var(--error-color);
+    }
+
+    .Login-loader {
+        width: 100%;
+        position: relative;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+        .logo {
+            width: 12em;
+            height: 12em;
+            font-size: 16px;
+
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .Logo-login {
+        max-width: 400px;
+        max-height: 112px;
+    }
+}
+
+@media (max-width: 550px) {
+    .AuthPage .container .Logo-login {
+        max-height: 80px;
+        max-width: 300px;
+
+    }
+}
+
+@media (max-width: 400px) {
+    .AuthPage .container .Logo-login {
+        max-width: 270px;
+    }
+}

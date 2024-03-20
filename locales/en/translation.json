@@ -1,0 +1,75 @@
+{
+    "auth": {
+        "title": {
+            "login": "Sign in",
+            "registration": "Sign up",
+            "join": "Join",
+            "joinUs": "Join Us",
+            "forgot": "Password recovery",
+            "passwordChange": "Password change",
+            "authError": "Error login,\n please try again",
+            "getStarted": "Get started"
+        },
+        "label": {
+            "birthdate": "Date of Birth",
+            "email": "Email",
+            "name": "Username",
+            "password": "Password",
+            "oldPassword": "Old password",
+            "newPassword": "New password",
+            "bonusDuration": "Bonus expiration date",
+            "confirmPassword": "Confirm new password",
+            "language": "Language",
+            "quickMenu": "Quick access",
+            "registration": "Registration",
+            "phone": "Phone number",
+            "code": "Code",
+            "applicationProfile": "Application profile",
+            "identificationHint": "Please, select identification result scenario."
+        },
+        "placeholder": {
+            "email": "Enter email",
+            "birthdate": "Enter Date of Birth",
+            "name": "Enter username",
+            "code": "Enter code",
+            "password": "Enter password",
+            "oldPassword": "Enter old password",
+            "newPassword": "Enter new password",
+            "confirmPassword": "Confirm new password",
+            "bonusDuration": "Enter bonus expiration date",
+            "language": "Select language",
+            "phoneNumber": "Phone number",
+            "applicationProfile": "Application profile"
+        },
+        "button": {
+            "login": "Sign in",
+            "forgot": "Forgot password?",
+            "cancel": "Cancel",
+            "close": "Сlose",
+            "update": "Update",
+            "forgotSuccess": "Restore",
+            "registration": "Registration",
+            "logout": "Log out",
+            "changePassword": "Change password",
+            "dashboard": "Administrators",
+            "next": "Next",
+            "questionnaire": "Application",
+            "failed": "Failed",
+            "success": "Success",
+            "successFastMode": "Success (fast mode)"
+        }
+    },
+
+    "notification": {
+        "newMessage": "New message from"
+    },
+
+    "menu": {
+        "dashboard": "Administrators",
+        "chat": "Chat"
+    },
+
+    "error": {
+        "required": "Required field",
+    }
+}

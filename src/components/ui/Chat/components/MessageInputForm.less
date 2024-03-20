@@ -1,0 +1,130 @@
+.MessageInputForm {
+  border: 1px solid #f7f8fa;
+  padding: 15px 15px 15px 20px;
+
+  .message-input-textarea {
+    background: #f3f4f7;
+    border-radius: 10px;
+    padding: 8px 15px;
+    border: none;
+    min-height: 40px !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #272833;
+
+    &:hover {
+      outline: 1px solid rgba(159, 162, 176, 0.5);
+      transition: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 1px solid #2333e6;
+      transition: none;
+    }
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      color: #9fa2b0;
+    }
+  }
+
+  .edit-buttons-wrapper {
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .edit-bold-button {
+    height: 15px;
+    width: 20px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .edit-italic-button {
+    height: 15px;
+    width: 20px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-style: italic;
+    cursor: pointer;
+  }
+
+  .message-input-wrapper {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .message-input {
+    padding: 10px;
+    height: 60px;
+    overflow-y: auto;
+    border: 1px solid var(--message-input-border);
+  }
+
+  .message-input:focus {
+    border: 2px solid var(--message-input-focus);
+    outline: none;
+  }
+
+  .control-buttons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2333e6;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding-left: 9px;
+
+    &:hover {
+      background: #3f4eff;
+    }
+  }
+
+  .tox-tinymce {
+    border: none;
+    border-radius: 0%;
+  }
+
+  .tox .tox-statusbar {
+    display: none;
+  }
+
+  .tox:not(.tox-tinymce-inline) .tox-editor-header {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .chatUpload {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    margin-left: 5px;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}

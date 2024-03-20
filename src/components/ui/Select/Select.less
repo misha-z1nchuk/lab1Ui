@@ -1,0 +1,49 @@
+.CustomSelect {
+    &.ant-select {
+        .ant-select-selector .ant-select-selection-search {
+            input {
+                height: 100%;
+            }
+        }
+    }
+
+    .ant-select-selection-overflow {
+        overflow: auto;
+        flex-wrap: nowrap;
+
+        &::-webkit-scrollbar {
+            background: transparent;
+            height: 0px;
+        }
+
+        .ant-select-selection-item {
+            background: #FFF;
+        }
+        
+    }
+
+    .ant-select-selection-item {
+        display: flex;
+        align-items: center;
+        height: unset;
+        padding: 4px 8px;
+        border-radius: 8px;
+
+        img {
+            width: 14px;
+            height: 14px;
+            margin-right: 6px;
+        }
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+    }
+}

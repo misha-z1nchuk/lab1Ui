@@ -1,0 +1,211 @@
+@loader-duration: 2.2s;
+@loader-animation: infinite linear;
+
+.Loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.Loader-size-small.Loader-container * {
+  font-size: 8px;
+}
+.Loader-size-large.Loader-container * {
+  font-size: 10px;
+}
+.Loader-size-ultra-large.Loader-container * {
+  font-size: 16px;
+}
+
+.Loader-background {
+  background-color: var(--primary-color-background_7);
+}
+
+.Loader-block {
+  position: relative;
+  top: 50%;
+  margin: auto;
+  transform: translate(0, -50%);
+  width: 12em;
+  height: 12em;
+  z-index: 15;
+
+  .LoaderImg {
+    width: 12em;
+    height: 12em;
+    border-radius: 50%;
+
+    .loaderBackground_svg__loaderPath1 {
+      animation: loaderAnimationImg1 @loader-duration @loader-animation;
+    }
+    .loaderBackground_svg__loaderPath2 {
+      animation: loaderAnimationImg2 @loader-duration @loader-animation;
+    }
+    .loaderBackground_svg__loaderPath3 {
+      animation: loaderAnimationImg3 @loader-duration @loader-animation;
+    }
+    .loaderBackground_svg__loaderPath4 {
+      animation: loaderAnimationImg4 @loader-duration @loader-animation;
+    }
+  }
+
+  .box {
+    width: 2.2em;
+    height: 2.2em;
+    position: absolute;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .blue {
+    z-index: 2;
+    background-color: var(--input-color-border);
+  }
+  .blue1 {
+    animation: blue1Animation @loader-duration @loader-animation;
+  }
+  .blue2 {
+    animation: blue2Animation @loader-duration @loader-animation;
+  }
+
+  .yellow {
+    z-index: 3;
+    background-color: var(--input-color-border);
+  }
+  .yellow1 {
+    animation: yellow1Animation @loader-duration @loader-animation;
+  }
+  .yellow3 {
+    animation: yellow2Animation @loader-duration @loader-animation;
+  }
+
+  .rotate-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: rotateBoxes @loader-duration @loader-animation;
+  }
+
+  @keyframes blue1Animation {
+    0%,
+    55%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    75%,
+    90% {
+      transform: translate(-4.2em, -3.5em);
+    }
+  }
+  @keyframes blue2Animation {
+    0%,
+    55%,
+    100% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    75%,
+    90% {
+      transform: translate(2em, 1.2em);
+    }
+  }
+  @keyframes yellow1Animation {
+    0%,
+    55%,
+    100% {
+      transform: translate(-50%, -50%);
+    }
+    20%,
+    45%,
+    75%,
+    90% {
+      transform: translate(1.4em, -4.2em);
+    }
+  }
+  @keyframes yellow2Animation {
+    0%,
+    55%,
+    100% {
+      transform: translate(-50%, -50%);
+    }
+    20%,
+    45%,
+    75%,
+    90% {
+      transform: translate(-3.5em, 2em);
+    }
+  }
+
+  @keyframes loaderAnimationImg1 {
+    0%,
+    55%,
+    100% {
+      opacity: 0;
+      transform-origin: top left;
+      transform: translate(-3em, 3em) rotate(15deg);
+    }
+    75%,
+    90% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes loaderAnimationImg2 {
+    0%,
+    55%,
+    100% {
+      opacity: 0;
+      transform-origin: bottom left;
+      transform: translate(-3em, -3em) rotate(-15deg);
+    }
+    75%,
+    90% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes loaderAnimationImg3 {
+    0%,
+    55%,
+    100% {
+      opacity: 0;
+      transform-origin: bottom right;
+      transform: translate(3em, 3em) rotate(-15deg);
+    }
+    75%,
+    90% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes loaderAnimationImg4 {
+    0%,
+    55%,
+    100% {
+      transform-origin: top right;
+      transform: translate(3em, -3em) rotate(-15deg);
+    }
+    75%,
+    90% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotateBoxes {
+    0%,
+    20% {
+      transform: rotate(0);
+    }
+    55%,
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

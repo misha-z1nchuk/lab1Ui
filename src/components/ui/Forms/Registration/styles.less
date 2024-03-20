@@ -1,0 +1,84 @@
+.LoginForm {
+  font-size: 14px;
+  position: relative;
+  z-index: 10 !important;
+
+  .CRUDER_ItemLabel {
+    height: 85px;
+
+    .CRUDER_label {
+      font-size: 14px;
+      padding-bottom: 5px;
+    }
+  }
+
+  .relative {
+    position: relative;
+
+    .forgotLink {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0;
+      height: 15px;
+    }
+  }
+
+  .loginLink {
+    font-size: 12px;
+    color: var(--tertiary-color);
+
+    span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 3px;
+
+      &:hover {
+        color: #485298;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      color: #485298;
+      text-decoration: none;
+    }
+  }
+
+  .flex-end {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 30px;
+
+    .registerLink {
+      padding: 0;
+      height: 30px;
+    }
+  }
+
+  .ant-input {
+    font-size: 14px;
+  }
+
+  .ant-input-affix-wrapper,
+  .ant-input-password {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .ant-form-item {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 820px) {
+  .LoginForm {
+    .ant-input-affix-wrapper,
+    .ant-input-password {
+      font-size: 12px;
+    }
+  }
+}

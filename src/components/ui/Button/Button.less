@@ -1,0 +1,99 @@
+.BASE_Button.ant-btn {
+    border-radius: 10px;
+    padding: 0 15px;
+    height: 45px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-project-color);
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 1.5px solid var(--primary-project-color-hover);
+    }
+
+    &.disabled {
+        box-shadow: none !important;
+        border-color: transparent !important;
+        color: var(--placeholder-color) !important;
+        opacity: 0.5;
+        
+        &:hover {
+            box-shadow: none !important;
+            border-color: transparent !important;
+            color: var(--placeholder-color) !important;
+        }
+    }
+}
+
+.BASE_Primary_button.ant-btn-primary {
+    border: 0;
+    color: var(--white-color);
+    background: var(--main-button-animated-background);
+    background-size: 200% 100%;
+
+    .anticon {
+        margin: 0;
+    }
+    
+    &:hover, &:focus {
+        border: 0;
+        color: var(--white-color);
+        background: var(--main-button-animated-background);
+        background-size: 200% 100%;
+        background-position: 100%;
+    }
+
+    &:active {
+        background: var(--main-button-background-active);
+        background-position: 100%;
+    }
+
+    &.disabled {
+        background: var(--main-button-background) !important;
+    }
+}
+
+.BASE_Secondary_button.ant-btn {
+    border: 0;
+    color: var(--secondary-btn-color);
+    background-color: var(--secondary-btn-background);
+    
+    &:hover, &:focus {
+        border: 0;
+        color: var(--secondary-btn-color);
+        background-color: var(--secondary-btn-background-hover);
+    }
+
+    &.disabled {
+        background-color: var(--secondary-btn-background) !important;
+    }
+}
+
+.BASE_Link_button.ant-btn {
+    border: 0;
+    font-weight: normal;
+
+    &:hover, &:focus {
+        border: 0;
+    }
+
+}
+
+.BASE_Danger_button.ant-btn {
+    border: 0;
+    color: var(--white-color);
+    background-color: var(--error-color);
+    
+    &:hover, &:focus {
+        border: 0;
+        color: var(--white-color);
+        background-color: var(--danger-button-background-hover);
+    }
+
+    &.disabled {
+        background-color: var(--error-color) !important;
+    }
+}

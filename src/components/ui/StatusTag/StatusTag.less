@@ -1,0 +1,43 @@
+.status-block {
+    height: 30px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 10px;
+    padding: 4px 25px;
+    letter-spacing: 0.03em;
+
+    svg {
+      margin-right: 7px;
+    }
+
+    &.accepted {
+      color: #1ecbac;
+      background-color: var(--connected-background);
+    }
+
+    &.pending {
+      color: var(--pending-status-color);
+      background-color: var(--pending-status-background);
+    }
+
+    &.rejected {
+      color: var(--rejected-font-color);
+      background-color: var(--rejected-background);
+    }
+
+    &.draft {
+      color: var(--secondary-color);
+      background-color: var(--draft-status-background);
+    }
+
+    &.rework {
+      color: var(--rework-status-color);
+      background-color: var(--rework-status-background);
+    }
+  }  

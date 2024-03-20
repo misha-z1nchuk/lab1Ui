@@ -1,0 +1,115 @@
+.FilesForm {
+  .formSectionTitle {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--default-button-text-color);
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    padding: 10px 5px;
+    transition: all .3s;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    &:hover {
+        background-color: #F6F8F9;
+    }
+
+    &.isRejected {
+      color: #F05858;
+
+      &::after {
+        background: #F05858;
+      }
+    }
+
+    .title {
+      font-size: 22px;
+        display: inline-flex;
+        align-items: center;
+
+        svg {
+            margin-right: 12px;
+        }
+    }
+
+    .collapseIcon {
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+
+        &.isOpened {
+            transform: rotate(180deg);
+        }
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        display: block;
+        background: var(--main-button-background);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+  }
+  .filesSubtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #8b8fa5;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .fileInputsList {
+    .fileInputs {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      
+
+      >div {
+        width: calc(50% - 10px) !important;
+        min-width: unset;
+      }
+    }
+  }
+
+  .fileModalButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    cursor: pointer;
+    height: 60px;
+    border: 1px dashed var(--accent-color);
+    border-radius: 10px;
+    transition: background .25s linear;
+
+    svg {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background: var(--light-gray-background);
+    }
+
+    &.isCreating {
+      opacity: 0.5;
+    }
+  }
+
+  .fileTitle {
+    font-size: 16px;
+    font-weight: 600;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 26px;
+  }
+}
