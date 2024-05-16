@@ -1,9 +1,11 @@
 export const ROUTES = {
-    ROOT         : '/',
-    AUTH         : '/auth',
-    PROFILE      : '/profile',
-    ABOUT        : '/about',
-    LOGIN        : '/login',
-    REGISTRATION : '/registration',
-    HOME         : '/contacts'
+    ROOT            : '/',
+    AUTH            : '/auth',
+    PROFILE         : '/profile',
+    ABOUT           : '/about',
+    ONLINE_USERS    : '/users/online',
+    LOGIN           : '/login',
+    REGISTRATION    : '/registration',
+    HOME            : '/contacts',
+    SHARED_CONTACTS : '/contacts/shared'
 };

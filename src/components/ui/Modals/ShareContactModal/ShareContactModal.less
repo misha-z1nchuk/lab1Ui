@@ -1,0 +1,250 @@
+.ProductModal {
+  position: relative;
+
+  .add-product-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--input-color-border);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .icon-wrapper {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--input-color-border);
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: var(--hover-blue);
+      .icon-wrapper {
+        box-shadow: 0px 0px 7px rgba(35, 51, 230, 0.44);
+      }
+    }
+  }
+
+  .ant-modal-footer {
+    padding: 0;
+    padding-top: 5px;
+    justify-content: center;
+  }
+  .ant-btn {
+    width: 190px;
+  }
+  .ant-modal-content {
+    padding: 40px 0 !important;
+  }
+
+  .ant-modal-body {
+  }
+
+  .title {
+    margin: 10px 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--default-button-text-color);
+  }
+
+  .tab-button-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 0 40px;
+  }
+
+  .tab-button {
+    width: 100%;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: var(--default-button-text-color);
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--header-border-color);
+    padding-bottom: 11px;
+
+    &.active {
+      border-bottom: 2px solid var(--input-color-border);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+
+      letter-spacing: 0.01em;
+
+      /* accent */
+
+      color: var(--input-color-border);
+    }
+
+    .marker {
+      margin-left: 5px;
+      align-self: flex-start;
+    }
+  }
+
+  .marker {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    &.accapted {
+      background-color: var(--connected-font-color);
+    }
+
+    &.pending {
+      background-color: var(--pending-font-color);
+    }
+
+    &.rejected {
+      background-color: var(--rejected-font-color);
+    }
+
+    &.draft {
+      background-color: var(--message-time);
+    }
+  }
+
+  .product-items-wrapper {
+    height: 314px;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+
+    &.empty {
+      justify-content: center;
+    }
+  }
+}
+
+.ProductItem {
+  background: var(--product-background);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .status-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .product-name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+    letter-spacing: 0.03em;
+
+    /* text */
+
+    color: var(--default-button-text-color);
+  }
+
+  .title-wrapper {
+    display: flex;
+  }
+
+  .status-block {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    span {
+      margin-left: 7px;
+    }
+
+    &.accapted {
+      color: var(--connected-font-color);
+      background-color: var(--connected-background);
+    }
+
+    &.pending {
+      color: var(--pending-font-color);
+      background-color: var(--pending-background);
+    }
+
+    &.rejected {
+      color: var(--rejected-font-color);
+      background-color: var(--rejected-background);
+    }
+
+    &.draft {
+      color: var(--message-time);
+      background-color: var(--primary-color-background_7);
+    }
+  }
+
+  .date {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: 0.01em;
+
+    /* secondary */
+
+    color: #9fa2b0;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-logo {
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+}

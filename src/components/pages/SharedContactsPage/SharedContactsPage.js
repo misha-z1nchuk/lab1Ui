@@ -5,42 +5,26 @@ import ProductModal from '../../ui/Modals/ProductModal/ProductModal';
 import Button from '../../ui/Button';
 import './ContactsPage.less';
 import CreateContactModal from '../../ui/Modals/CreateContactModal/CreateContactModal';
-import ShareModal from '../../ui/Modals/ShareContactModal/ShareContactModal';
 import { useUser } from '../../../hooks';
 
 const { Column } = Table;
 
 // eslint-disable-next-line max-lines-per-function
-function ContactsPage() {
+function SharedContactsPage() {
     const [ contacts, setContacts ] = useState([]);
-    const [ currentContact, setCurrentContact ] = useState(null);
     const [ isOpen, setIsOpen ] = useState(false);
-    const [ isOpenShared, setIsOpenShared ] = useState(false);
     const [ isCreateModalOpen, setIsCreateModalOpen ] = useState(false);
     const [ contact, setContact ] = useState({});
     const [ queryParams, setQueryParams ] = useState({ search: '', sortBy: 'createdAt', orderBy: 'DESC' });
-    const [ ws, setWs ] = useState(new WebSocket('ws://localhost:8082'));
-
     const user = useUser() || { };
 
+    const [ ws, setWs ] = useState(new WebSocket('ws://localhost:8082'));
+
     async function fetchData() {
-        const contactsData = await api.contacts.list(queryParams);
+        const contactsData = await api.contacts.listShared(queryParams);
 
         setContacts(contactsData);
     }
-
-    function handleSocketUpdate(data) {
-        const newArr = [ ...contacts ];
-
-        const idx = newArr.findIndex(e => e.id === data.data.id);
-
-        newArr[idx] = data.data;
-        setContacts(newArr);
-    }
-
-    ws.onmessage = function (event) {
-        handleSocketUpdate(JSON.parse(event.data));
-    };
 
     useEffect(() => {
         ws.onopen = (e) => {
@@ -52,6 +36,7 @@ function ContactsPage() {
 
     async function handeUpdate(data) {
         await api.contacts.update(data.id, data);
+        ws.send(JSON.stringify({ type: 'update', userId: user.id, data, id: data.id }));
         setIsOpen(false);
         fetchData();
     }
@@ -67,16 +52,6 @@ function ContactsPage() {
         fetchData();
     }
 
-    async function handeShare(id) {
-        setCurrentContact(id);
-        setIsOpenShared(true);
-    }
-
-    async function handeShareContact(userId) {
-        await api.contacts.share(currentContact, { userId });
-        setIsOpenShared(false);
-    }
-
     function handleTableOnChange(p, f, sorter) {
         const { columnKey, order } = sorter;
         const mapOrder = { descend: 'DESC', ascend: 'ASC' };
@@ -86,19 +61,6 @@ function ContactsPage() {
 
     return (
         <div>
-            <div className='createDiv'>
-                <span className='infoText'>Managing contacts</span>
-                <Button
-                    className='createBtn'
-                    type='primary'
-                    htmlType='submit'
-                    style={{ textAlign: 'right' }}
-                    onClick={() => setIsCreateModalOpen(true)}
-                >
-                    Create
-                </Button>
-            </div>
-
             <div className='filters'>
                 <div>
                     <Input
@@ -142,13 +104,6 @@ function ContactsPage() {
                             >
                                 Delete
                             </a>
-                            <a
-                                onClick={() => {
-                                    handeShare(record.id);
-                                }}
-                            >
-                                Share
-                            </a>
                         </Space>
                     )}
                 />
@@ -161,11 +116,8 @@ function ContactsPage() {
                 onClose={() => setIsCreateModalOpen(false)}
                 onOk={handeCreate}
             />
-            <ShareModal
-                isOpen={isOpenShared} contactData={contact} onClose={() => setIsOpenShared(false)}
-                onOk={handeShareContact} />
         </div>
     );
 }
 
-export default ContactsPage;
+export default SharedContactsPage;

@@ -7,6 +7,18 @@ class Profile extends Base {
 
         return data;
     };
+
+    listUsers = async () => {
+        const data = await handleRequest(this.apiClient.get('users'));
+
+        return data;
+    };
+
+    listOnlineUsers = async () => {
+        const data = await handleRequest(this.apiClient.get('users/online'));
+
+        return data;
+    };
 }
 
 export default Profile;

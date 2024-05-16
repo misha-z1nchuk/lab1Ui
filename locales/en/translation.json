@@ -70,6 +70,6 @@
     },
 
     "error": {
-        "required": "Required field",
+        "required": "Required field"
     }
 }

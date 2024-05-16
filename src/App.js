@@ -12,6 +12,8 @@ import RegistrationPage from './components/pages/Auth/RegistrationPage';
 import ProfilePage from './components/pages/Profile/ProfilePage';
 import AboutPage from './components/pages/About/AboutPage';
 import ContactsPage from './components/pages/ContactsPage/ContactsPage';
+import SharedContactsPage from './components/pages/SharedContactsPage/SharedContactsPage';
+import OnlineUsersPage from './components/pages/OnlineUsersPage/OnlineUsersPage';
 
 function dummyLayout(props) {
     return props.children;
@@ -37,7 +39,6 @@ function AppRoute({ component: Page }) {
     );
 }
 
-
 function App() {
     return (
         <BrowserRouter history={history}>
@@ -57,11 +58,17 @@ function App() {
                     path   = {ROUTES.HOME}
                     element = {<PrivateRoute layout={AuthLayout} component={ContactsPage} />} />
                 <Route
+                    path   = {ROUTES.SHARED_CONTACTS}
+                    element = {<PrivateRoute layout={AuthLayout} component={SharedContactsPage} />} />
+                <Route
                     path   = {ROUTES.PROFILE}
                     element = {<PrivateRoute layout={AuthLayout} component={ProfilePage} />} />
                 <Route
                     path   = {ROUTES.ABOUT}
                     element = {<PrivateRoute layout={AuthLayout} component={AboutPage} />} />
+                <Route
+                    path   = {ROUTES.ONLINE_USERS}
+                    element = {<PrivateRoute layout={AuthLayout} component={OnlineUsersPage} />} />
                 <Route
                     path    = '*'
                     element = {<Navigate to={ROUTES.HOME} replace />}

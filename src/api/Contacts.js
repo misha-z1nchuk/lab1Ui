@@ -9,6 +9,16 @@ class Contacts extends Base {
         return response;
     };
 
+    listShared = async (params) => {
+        const response = await handleRequest(this.apiClient.get(`contacts/shared?${convertToQueryParam(params)}`));
+
+        return response;
+    };
+
+    share = async (id, data) => {
+        return handleRequest(this.apiClient.post(`contacts/${id}/share`, data));
+    };
+
     update = async (id, data) => {
         const response = await handleRequest(this.apiClient.patch(`contacts/${id}`, data));
 
