@@ -19,6 +19,7 @@ function CreateContactModal({ isOpen, onOk, onClose }) {
 
     return (
         <Modal
+            title={'Create Contact'}
             centered
             destroyOnClose
             onCancel={onClose}

@@ -23,6 +23,7 @@ function ProductModal({ isOpen, onOk, onClose, contactData }) {
 
     return (
         <Modal
+            title={'Edit contact'}
             centered
             destroyOnClose
             onCancel={onClose}

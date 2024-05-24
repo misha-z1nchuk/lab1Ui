@@ -53,7 +53,6 @@ function App() {
                 <Route
                     path   = {ROUTES.REGISTRATION}
                     element = {<AppRoute component={RegistrationPage} />} />
-
                 <Route
                     path   = {ROUTES.HOME}
                     element = {<PrivateRoute layout={AuthLayout} component={ContactsPage} />} />

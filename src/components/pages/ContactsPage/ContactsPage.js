@@ -21,7 +21,7 @@ function ContactsPage() {
     const [ queryParams, setQueryParams ] = useState({ search: '', sortBy: 'createdAt', orderBy: 'DESC' });
     const [ ws, setWs ] = useState(new WebSocket('ws://localhost:8082'));
 
-    const user = useUser() || { };
+    const user = useUser() || {};
 
     async function fetchData() {
         const contactsData = await api.contacts.list(queryParams);
@@ -112,6 +112,7 @@ function ContactsPage() {
             </div>
 
             <Table
+                rowKey={'id'}
                 dataSource={contacts} pagination={false} onChange={handleTableOnChange}
                 scroll={{ x: true }}>
                 <Column

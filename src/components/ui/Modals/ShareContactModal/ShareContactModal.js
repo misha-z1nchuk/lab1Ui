@@ -22,6 +22,7 @@ function ShareModal({ isOpen, onOk, onClose }) {
 
     return (
         <Modal
+            title={'Share Contact'}
             centered
             destroyOnClose
             onCancel={onClose}

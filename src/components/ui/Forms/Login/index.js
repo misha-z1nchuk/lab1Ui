@@ -25,14 +25,14 @@ function LoginForm({ isLoading, error, onSubmit, isCodeSent }) {
     }
 
     function getErrorMessage(id) {
-        const message = getFieldError(id)?.message;
+        const message = getFieldError(id);
 
         return message;
     }
 
 
     function getFieldError(id) {
-        return error?.errors?.find(item => item.uri === `#/${id}`);
+        return error?.error?.fields?.[id];
     }
 
 
@@ -40,7 +40,7 @@ function LoginForm({ isLoading, error, onSubmit, isCodeSent }) {
         <div className='LoginForm'>
             <Form autoComplete='off' onFinish={handleSubmit}>
                 <InputType
-                    label={t('auth.label.email')}
+                    label={'Email'}
                     name='email'
                     error={getErrorMessage('email')}
                     rules={[ { required: true, message: t('error.required') } ]}
@@ -49,9 +49,9 @@ function LoginForm({ isLoading, error, onSubmit, isCodeSent }) {
                     placeholder={t('auth.placeholder.email')}
                 />
                 <InputType
-                    label={t('auth.label.password')}
+                    label={'Password'}
                     name='password'
-                    error={getErrorMessage('email')}
+                    error={getErrorMessage('password')}
                     rules={[ { required: true, message: t('error.required') } ]}
                     type = 'password'
                     value={data.password}
@@ -63,6 +63,9 @@ function LoginForm({ isLoading, error, onSubmit, isCodeSent }) {
                     htmlType='submit'
                     loading={isLoading}
                     className='submit-button'
+                    onClick={() => {
+                        console.log('here');
+                    }}
                 >
                     {isCodeSent ? t('auth.button.login') : t('auth.button.next')}
                 </Button>

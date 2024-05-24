@@ -15,6 +15,9 @@ import './LoginPage.less';
 
 
 function LoginPage() {
+    const language = useSelector(state => state.sessions);
+
+    console.log(language);
     const [ query ]   = useQuery();
     const navigate    = useNavigate();
     const { t }       = useTranslation();
@@ -28,9 +31,12 @@ function LoginPage() {
     });
 
     function handleLogin(data) {
-        loginAction(data, navigate);
+        try {
+            loginAction(data, navigate);
+        } catch (e) {
+            console.log(e);
+        }
     }
-
 
     return (
         <div className='Login-Page Login'>

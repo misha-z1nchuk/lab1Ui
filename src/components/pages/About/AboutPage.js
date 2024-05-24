@@ -26,11 +26,11 @@ function AboutPage() {
                 </ul>
                 <p>Whether you're a busy professional, a student, or anyone who needs to keep track of contacts, our app is designed to simplify the process for you.</p>
             </div>
-            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+            {/* <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
                 <Icons.Logo
                     style={{ height: 93, width: 96 }}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

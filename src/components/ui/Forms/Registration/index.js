@@ -41,7 +41,7 @@ function RegistrationForm({ isLoading, error, onSubmit }) {
         <div className='LoginForm'>
             <Form autoComplete='off' onFinish={handleSubmit}>
                 <InputType
-                    label={t('auth.label.email')}
+                    label={'Email'}
                     name='email'
                     asterisk
                     error={getErrorMessage('email')}
@@ -51,10 +51,10 @@ function RegistrationForm({ isLoading, error, onSubmit }) {
                     placeholder={t('auth.placeholder.email')}
                 />
                 <InputType
-                    label={t('auth.label.password')}
+                    label={'Password'}
                     name='password'
                     asterisk
-                    error={getErrorMessage('email')}
+                    error={getErrorMessage('password')}
                     rules={[ { required: true, message: t('error.required') } ]}
                     type = 'password'
                     value={data.password}

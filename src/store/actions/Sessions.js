@@ -135,7 +135,6 @@ export function login(data, navigate) {
             }, { replace: true });
         } catch (err) {
             dispatch({ type: LOGIN_ERROR, payload: err });
-            throw err;
         }
     };
 }
@@ -156,8 +155,9 @@ export function registration(data, navigate) {
                 search   : ''
             }, { replace: true });
         } catch (err) {
+            console.log('here');
             dispatch({ type: LOGIN_ERROR, payload: err });
-            throw err;
+            // throw err;
         }
     };
 }

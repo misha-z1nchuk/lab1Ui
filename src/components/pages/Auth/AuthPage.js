@@ -28,11 +28,15 @@ function AuthPage() {
         authAction({ navigate, pathname, search });
     }, []);
 
-    useEffect(async () => {
+    async function check() {
         if (loginError) {
             await sleep(DELAY);
             navigate(ROUTES.LOGIN);
         }
+    }
+
+    useEffect(() => {
+        check();
     }, [ loginError ]);
 
     return (
