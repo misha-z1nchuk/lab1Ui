@@ -64,6 +64,9 @@ function AuthMenu({ dropdown, mode, collapsed }) {
             <Menu.Item key='about' onClick={() => navigate(ROUTES.ABOUT)} className='profile-link'>
                 <span>{'About'}</span>
             </Menu.Item>
+            <Menu.Item key='jobs' onClick={() => navigate(ROUTES.JOBS)} className='profile-link'>
+                <span>{'Jobs'}</span>
+            </Menu.Item>
         </Menu>
     );
 

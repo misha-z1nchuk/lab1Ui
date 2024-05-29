@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Space, Table, Input } from 'antd'; // Import Input from Ant Design
 import api from '../../../apiSingleton';
 import ProductModal from '../../ui/Modals/ProductModal/ProductModal';
-import Button from '../../ui/Button';
 import './ContactsPage.less';
 import CreateContactModal from '../../ui/Modals/CreateContactModal/CreateContactModal';
 import { useUser } from '../../../hooks';
+import { useWebSocket } from '../../../hooks/useWs';
 
 const { Column } = Table;
 
@@ -18,7 +18,7 @@ function SharedContactsPage() {
     const [ queryParams, setQueryParams ] = useState({ search: '', sortBy: 'createdAt', orderBy: 'DESC' });
     const user = useUser() || { };
 
-    const [ ws, setWs ] = useState(new WebSocket('ws://localhost:8082'));
+    const { ws } = useWebSocket();
 
     async function fetchData() {
         const contactsData = await api.contacts.listShared(queryParams);
@@ -27,10 +27,6 @@ function SharedContactsPage() {
     }
 
     useEffect(() => {
-        ws.onopen = (e) => {
-            ws.send(JSON.stringify({ type: 'save-connection', userId: user.id }));
-        };
-
         fetchData();
     }, [ queryParams.search, queryParams.sortBy, queryParams.orderBy ]);
 

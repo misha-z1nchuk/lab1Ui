@@ -1,0 +1,483 @@
+.DashboardPage {
+  background-color: var(--white-color);
+  padding-bottom: 60px;
+
+  &.public {
+    height: 100%;
+    overflow: auto;
+    padding: 15px;
+  }
+
+  .wrapper {
+    max-width: 800px;
+    margin: auto;
+    scroll-margin: 15px;
+  }
+
+  .statusInfoBlock {
+    display: flex;
+    padding: 15px 20px;
+    border-radius: 15px;
+    gap: 20px;
+    
+    &.accepted {
+      background: #eff9f7;
+    }
+
+    &.rejected {
+      background: #FBF1EF;
+    }
+
+    svg {
+      width: 49px;
+      height: 49px;
+      flex-shrink: 0;
+    }
+
+    .statusTitle {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      margin-bottom: 5px;
+    }
+
+    .statusInfo {
+      line-height: 21px;
+    }
+  }
+
+  .applicationHeader {
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: #cdcdd8;
+      display: block;
+      margin-top: 15px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        margin-bottom: 0;
+
+        @media (max-width: 650px) {
+          display: none;
+        }
+      }
+    }
+
+    .rejectsOverview {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 15px;
+
+      .message {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: var(--pending-status-background);
+        color: var(--pending-status-color);
+        padding: 8px;
+        border-radius: 28px;
+        font-weight: 600;
+        min-width: 130px;
+
+        svg {
+          min-width: 15px;
+          height: 15px;
+        }
+      }
+
+      .list {
+        color: var(--pending-status-color);
+        font-weight: 600;
+      }
+
+      .rejectLink {
+        cursor: pointer;
+        word-break: break-word;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .applicationStatus {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 650px) {
+      width: 100%;
+      gap: 10px;
+      text-align: left;
+      justify-content: space-between;
+
+      .statusTag {
+        margin-left: auto;
+      }
+    }
+  }
+
+
+  .ant-form-item
+    .ant-form-item-with-help
+    .CRUDER_FormInput
+    .ant-form-item-has-error {
+    height: 40px;
+  }
+
+  .form-body {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: var(--default-button-text-color);
+    margin-right: auto;
+  }
+
+  .BASE_Form {
+    width: 100%;
+  }
+
+  .BASE_Form_inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .CRUDER_ItemLabel {
+    font-size: 14px;
+    position: relative;
+    height: 85px;
+
+    .ant-form-item-explain {
+      padding: 0 15px;
+      margin-top: 3px;
+    }
+
+    .comment-block {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      right: -9px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      svg path {
+        fill: var(--error-color);
+      }
+
+      button {
+        width: min-content;
+        height: max-content;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .CRUDER_FormSelect {
+    .ant-select-focused {
+      .ant-select-arrow {
+        transform: rotate(180deg);
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .ant-picker {
+    width: 100%;
+    height: 40px;
+
+    .ant-picker-clear {
+      right: 25px;
+    }
+  }
+
+  .ant-select-selector {
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .DateInput {
+    width: 100%;
+  }
+
+  .button-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 40px;
+    padding-bottom: 47px;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+
+  .primary-button {
+    margin-right: 0;
+  }
+
+  .filesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    
+    .fileBlock {
+      position: relative;
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--accent-color);
+      border: 1px dashed var(--accent-color);
+      transition: background .25s linear;
+      height: 60px;
+      border-radius: 10px;
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--light-gray-background);
+      }
+
+      .deleteFileIcon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 14px;
+        width: 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg,
+        path {
+          fill: var(--accent-color) !important;
+        }
+      }
+
+      .fileLabel {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .applicationFieldStatusIcon {
+          height: 18px;
+          position: absolute;
+          top: 3px;
+          left: -23px;
+        }
+      }
+    }
+  }
+
+  .wrapper.mobile {
+    .CRUDER_ItemLabel {
+      width: 100% !important;
+    }
+  
+    .BASE_Form_inputs {
+      justify-content: flex-start;
+    }
+  
+    .button-wrapper {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 882px) {
+    .CRUDER_ItemLabel {
+      width: 100% !important;
+    }
+
+    .BASE_Form_inputs {
+      justify-content: flex-start;
+    }
+
+    .button-wrapper {
+      justify-content: center;
+    }
+  }
+}
+
+.DashboardWrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    justify-content: center;
+    align-items: center;
+    color: --var(primary-color);
+
+    .statusTitle {
+        white-space: pre;
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .statusInfo {
+        white-space: pre;
+        margin: 10px 0 60px 0;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+    }
+}
+
+.previewWrapper {
+  background: #585858;
+  height: 100%;
+
+  .modeSwitcher {
+    display: flex;
+    justify-content: center;
+    background-color: #3c3c3c;
+    color: #888888;
+
+    &>div {
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 20px;
+
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+
+  .DashboardPage {
+    max-width: 1000px;
+    width: 100%;
+    height: calc(80% - 40px);
+    margin: auto;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.mobile {
+      width: 500px;
+
+      .applicationHeader {
+        h2 {
+          display: none;
+        }
+
+        .applicationStatus {
+          width: 100%;
+          gap: 10px;
+          text-align: left;
+    
+          .statusTag {
+            margin-left: auto;
+          }    
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .modeSwitcher {
+      display: none;
+    }
+
+    .DashboardPage {
+      height: 100%;
+      border-radius: 0;
+    }
+  }
+}
+
+.createDiv {
+  display: flex;
+  justify-content: space-between;
+
+  .createBtn {
+    height: 30px;
+  } 
+}
+
+/* ContactsPage.less */
+.createDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.infoText {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.createBtn {
+  font-size: 16px;
+}
+
+.filters {
+  margin-bottom: 16px;
+}
+
+.filters .ant-input {
+  width: 100%; /* Ensure input takes full width */
+  font-size: 16px; /* Increase font size for better visibility */
+  padding: 8px; /* Increase padding for better touch target */
+}
+
+@media (min-width: 576px) {
+  .filters .ant-input {
+      width: auto; /* Reset width to auto on larger screens */
+  }
+}
+
+/* ContactsPage.less */
+.filters .ant-input {
+  width: 100%; /* Ensure input takes full width */
+  font-size: 16px; /* Increase font size for better visibility */
+  padding: 8px; /* Increase padding for better touch target */
+  min-width: 200px; /* Set a minimum width for the input */
+}
+
+@media (min-width: 768px) {
+  .filters .ant-input {
+      min-width: 300px; /* Adjust minimum width for larger screens such as iPads */
+  }
+}

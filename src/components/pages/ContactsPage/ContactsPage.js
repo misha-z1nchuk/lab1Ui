@@ -6,7 +6,7 @@ import Button from '../../ui/Button';
 import './ContactsPage.less';
 import CreateContactModal from '../../ui/Modals/CreateContactModal/CreateContactModal';
 import ShareModal from '../../ui/Modals/ShareContactModal/ShareContactModal';
-import { useUser } from '../../../hooks';
+import { useWebSocket } from '../../../hooks/useWs';
 
 const { Column } = Table;
 
@@ -19,9 +19,8 @@ function ContactsPage() {
     const [ isCreateModalOpen, setIsCreateModalOpen ] = useState(false);
     const [ contact, setContact ] = useState({});
     const [ queryParams, setQueryParams ] = useState({ search: '', sortBy: 'createdAt', orderBy: 'DESC' });
-    const [ ws, setWs ] = useState(new WebSocket('ws://localhost:8082'));
 
-    const user = useUser() || {};
+    const { ws, lastMessage } = useWebSocket();
 
     async function fetchData() {
         const contactsData = await api.contacts.list(queryParams);
@@ -38,17 +37,15 @@ function ContactsPage() {
         setContacts(newArr);
     }
 
-    ws.onmessage = function (event) {
-        handleSocketUpdate(JSON.parse(event.data));
-    };
-
     useEffect(() => {
-        ws.onopen = (e) => {
-            ws.send(JSON.stringify({ type: 'save-connection', userId: user.id }));
-        };
-
         fetchData();
     }, [ queryParams.search, queryParams.sortBy, queryParams.orderBy ]);
+
+    useEffect(() => {
+        if (lastMessage?.type === 'update') {
+            handleSocketUpdate(lastMessage);
+        }
+    }, [ lastMessage ]);
 
     async function handeUpdate(data) {
         await api.contacts.update(data.id, data);

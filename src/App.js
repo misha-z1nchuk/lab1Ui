@@ -14,6 +14,7 @@ import AboutPage from './components/pages/About/AboutPage';
 import ContactsPage from './components/pages/ContactsPage/ContactsPage';
 import SharedContactsPage from './components/pages/SharedContactsPage/SharedContactsPage';
 import OnlineUsersPage from './components/pages/OnlineUsersPage/OnlineUsersPage';
+import JobsPage from './components/pages/JobsPage/JobsPage';
 
 function dummyLayout(props) {
     return props.children;
@@ -68,6 +69,9 @@ function App() {
                 <Route
                     path   = {ROUTES.ONLINE_USERS}
                     element = {<PrivateRoute layout={AuthLayout} component={OnlineUsersPage} />} />
+                <Route
+                    path   = {ROUTES.JOBS}
+                    element = {<PrivateRoute layout={AuthLayout} component={JobsPage} />} />
                 <Route
                     path    = '*'
                     element = {<Navigate to={ROUTES.HOME} replace />}
